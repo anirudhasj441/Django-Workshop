@@ -1,0 +1,29 @@
+{% extends 'my_portfolio_app/base.html' %}
+
+{% block content %}
+
+<table class="table table-bordered mt-5">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">Sr</th>
+            <th scope="col">Full Name</th>
+            <th scope="col">Email Id</th>
+            <th scope="col">Contact Number</th>
+            <th scope="col">Message</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for one_contact  in class_form_all_values %}
+        <tr>
+            <th scope="row">{{one_contact.pk}}</th>
+            <td>{{one_contact.full_name}}</td>
+            <td>{{one_contact.email_id}}</td>
+            <td>{{one_contact.contact_number}}</td>
+            <td>{{one_contact.message}}</td>
+            
+        </tr> 
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
